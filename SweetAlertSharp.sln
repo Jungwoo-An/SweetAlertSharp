@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetAlertSharp", "SweetAlertSharp\SweetAlertSharp.csproj", "{255E7C3C-63D2-4F4D-B5E1-DDA3A476F33E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetAlertSharpDemo", "SweetAlertSharpDemo\SweetAlertSharpDemo.csproj", "{8CE3C40C-9453-4499-9902-D057EF3CFFB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{255E7C3C-63D2-4F4D-B5E1-DDA3A476F33E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{255E7C3C-63D2-4F4D-B5E1-DDA3A476F33E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{255E7C3C-63D2-4F4D-B5E1-DDA3A476F33E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE3C40C-9453-4499-9902-D057EF3CFFB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE3C40C-9453-4499-9902-D057EF3CFFB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE3C40C-9453-4499-9902-D057EF3CFFB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE3C40C-9453-4499-9902-D057EF3CFFB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
