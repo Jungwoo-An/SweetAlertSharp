@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweetAlertSharp", "SweetAlertSharp\SweetAlertSharp.csproj", "{255E7C3C-63D2-4F4D-B5E1-DDA3A476F33E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{255E7C3C-63D2-4F4D-B5E1-DDA3A476F33E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{255E7C3C-63D2-4F4D-B5E1-DDA3A476F33E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{255E7C3C-63D2-4F4D-B5E1-DDA3A476F33E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{255E7C3C-63D2-4F4D-B5E1-DDA3A476F33E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9F13E97-C405-47CF-A57E-7833A4701FE2}
+	EndGlobalSection
+EndGlobal
