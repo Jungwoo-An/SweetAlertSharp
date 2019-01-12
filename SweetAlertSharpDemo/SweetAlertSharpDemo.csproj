@@ -95,5 +95,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SweetAlertSharp\SweetAlertSharp.csproj">
+      <Project>{255e7c3c-63d2-4f4d-b5e1-dda3a476f33e}</Project>
+      <Name>SweetAlertSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

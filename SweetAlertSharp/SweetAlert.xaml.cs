@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace SweetAlertSharp
 {
     /// <summary>
-    /// SweetAlertSharp.xaml에 대한 상호 작용 논리
+    /// SweetAlert.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class SweetAlertSharp : Window
+    public partial class SweetAlert : Window
     {
-        public SweetAlertSharp()
+        public SweetAlert()
         {
             InitializeComponent();
         }

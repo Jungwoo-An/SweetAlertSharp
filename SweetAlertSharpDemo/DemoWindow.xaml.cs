@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SweetAlertSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,12 @@ namespace SweetAlertSharpDemo
         public DemoWindow()
         {
             InitializeComponent();
+        }
+
+        private void Event_Click(object sender, RoutedEventArgs e)
+        {
+            var alert = new SweetAlert();
+            alert.ShowDialog();
         }
     }
 }
