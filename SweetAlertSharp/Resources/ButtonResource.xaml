@@ -27,17 +27,38 @@
         </Setter>
     </Style>
 
-    <Style x:Key="PrimaryBtn" TargetType="Button" BasedOn="{StaticResource ButtonStyleBase}">
+    <Style x:Key="DefaultButton" TargetType="Button" BasedOn="{StaticResource ButtonStyleBase}">
+        <Style.Resources>
+            <SolidColorBrush x:Key="Background" Color="#aaa" />
+            <SolidColorBrush x:Key="MouseOverBackground" Color="#999" />
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="BlueButton" TargetType="Button" BasedOn="{StaticResource ButtonStyleBase}">
         <Style.Resources>
             <SolidColorBrush x:Key="Background" Color="#3085d6" />
             <SolidColorBrush x:Key="MouseOverBackground" Color="#2876c1" />
         </Style.Resources>
     </Style>
 
-    <Style x:Key="DangerBtn" TargetType="Button" BasedOn="{StaticResource ButtonStyleBase}">
+    <Style x:Key="RedButton" TargetType="Button" BasedOn="{StaticResource ButtonStyleBase}">
         <Style.Resources>
             <SolidColorBrush x:Key="Background" Color="#dd3333" />
             <SolidColorBrush x:Key="MouseOverBackground" Color="#cc2e2e" />
+        </Style.Resources>
+    </Style>
+    
+    <Style x:Key="GreenButton" TargetType="Button" BasedOn="{StaticResource ButtonStyleBase}">
+        <Style.Resources>
+            <SolidColorBrush x:Key="Background" Color="#28a745" />
+            <SolidColorBrush x:Key="MouseOverBackground" Color="#218838" />
+        </Style.Resources>
+    </Style>
+    
+    <Style x:Key="YellowButton" TargetType="Button" BasedOn="{StaticResource ButtonStyleBase}">
+        <Style.Resources>
+            <SolidColorBrush x:Key="Background" Color="#ffc107" />
+            <SolidColorBrush x:Key="MouseOverBackground" Color="#e0a800" />
         </Style.Resources>
     </Style>
 </ResourceDictionary>
