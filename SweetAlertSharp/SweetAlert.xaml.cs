@@ -22,7 +22,7 @@ namespace SweetAlertSharp
     {
         #region Private Fields
         private string _caption;
-        private string _content;
+        private string _message;
         #endregion
 
         private SweetAlert()
@@ -44,14 +44,14 @@ namespace SweetAlertSharp
             }
         }
 
-        public new string Content
+        public string Message
         {
-            get => _content;
+            get => _message;
             set
             {
-                _content = value;
+                _message = value;
 
-                NotifyPropertyChanged("Content");
+                NotifyPropertyChanged("Message");
             }
         }
         #endregion
@@ -62,7 +62,7 @@ namespace SweetAlertSharp
             var alert = new SweetAlert
             {
                 Caption = caption,
-                Content = content,
+                Message = content,
             };
 
             alert.ShowDialog();
