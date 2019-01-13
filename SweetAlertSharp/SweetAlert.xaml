@@ -3,8 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Name="_SweetAlert"
         Title="SweetAlert"
-        MinWidth="300"
-        Width="300"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="NoResize"
@@ -23,7 +21,7 @@
     </Window.Resources>
 
     <Grid>
-        <Border x:Name="Dialog" Margin="10" Background="White" CornerRadius="5" Padding="20" RenderTransformOrigin="0.5,0.5">
+        <Border x:Name="Dialog" Margin="10" MinWidth="400" MaxWidth="800" MaxHeight="800" Background="White" CornerRadius="5" Padding="20" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center">
             <Border.Triggers>
                 <EventTrigger RoutedEvent="Loaded">
                     <BeginStoryboard Storyboard="{StaticResource ShowAnimation}" />
@@ -43,9 +41,9 @@
                 <DropShadowEffect BlurRadius="8" Color="#000" Direction="270" Opacity="0.3" ShadowDepth="4" />
             </Border.Effect>
 
-            <StackPanel Orientation="Vertical">
-                <TextBlock x:Name="_Title" Text="{Binding Title, ElementName=_SweetAlert}" FontWeight="Bold" FontSize="25pt" HorizontalAlignment="Center" />
-                <TextBlock x:Name="_Content" Text="{Binding Message, ElementName=_SweetAlert}" FontSize="13pt" Margin="0,15" HorizontalAlignment="Center" />
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <TextBlock x:Name="_Title" Text="{Binding Title, ElementName=_SweetAlert}" FontWeight="Bold" FontSize="25pt" HorizontalAlignment="Center" TextWrapping="Wrap" />
+                <TextBlock x:Name="_Content" Text="{Binding Message, ElementName=_SweetAlert}" FontSize="13pt" Margin="0,15" HorizontalAlignment="Center" TextWrapping="Wrap" />
             </StackPanel>
         </Border>
     </Grid>
