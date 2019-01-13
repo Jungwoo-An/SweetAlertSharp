@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,17 @@ namespace SweetAlertSharp
     /// <summary>
     /// SweetAlert.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class SweetAlert : Window
+    public partial class SweetAlert : Window, INotifyPropertyChanged
     {
         public SweetAlert()
         {
             InitializeComponent();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void NotifyPropertyChanged(string prop)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
     }
 }
