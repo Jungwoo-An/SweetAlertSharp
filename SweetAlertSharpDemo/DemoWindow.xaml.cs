@@ -27,8 +27,7 @@ namespace SweetAlertSharpDemo
 
         private void Event_Click(object sender, RoutedEventArgs e)
         {
-            var alert = new SweetAlert();
-            alert.ShowDialog();
+            SweetAlert.Show("Caption", "Content");
         }
     }
 }

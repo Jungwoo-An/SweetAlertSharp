@@ -5,6 +5,7 @@
         MinWidth="300"
         Width="300"
         WindowStartupLocation="CenterScreen"
+        Topmost="True"
         SizeToContent="Height">
 
     <WindowChrome.WindowChrome>
@@ -18,7 +19,7 @@
         <ResourceDictionary Source="./Resources/ButtonResource.xaml" />
     </Window.Resources>
 
-    <Grid Background="White">
+    <Grid x:Name="Dialog" Background="White" RenderTransformOrigin="0.5,0.5">
         <Border Padding="20">
             <StackPanel Orientation="Vertical" />
         </Border>

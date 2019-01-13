@@ -20,15 +20,61 @@ namespace SweetAlertSharp
     /// </summary>
     public partial class SweetAlert : Window, INotifyPropertyChanged
     {
-        public SweetAlert()
+        #region Private Fields
+        private string _caption;
+        private string _content;
+        #endregion
+
+        private SweetAlert()
         {
             InitializeComponent();
         }
 
+        #region Public Properties
+        public string Caption
+        {
+            get => _caption;
+            set
+            {
+                _caption = value;
+
+                Title = _caption;
+
+                NotifyPropertyChanged("Caption");
+            }
+        }
+
+        public new string Content
+        {
+            get => _content;
+            set
+            {
+                _content = value;
+
+                NotifyPropertyChanged("Content");
+            }
+        }
+        #endregion
+
+        #region Public Methods
+        public static void Show(string caption, string content)
+        {
+            var alert = new SweetAlert
+            {
+                Caption = caption,
+                Content = content,
+            };
+
+            alert.ShowDialog();
+        }
+        #endregion
+
+        #region Public Events
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string prop)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
+        #endregion
     }
 }
