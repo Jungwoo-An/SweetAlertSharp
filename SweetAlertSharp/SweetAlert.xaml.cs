@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -21,8 +22,43 @@ namespace SweetAlertSharp
     public partial class SweetAlert : Window, INotifyPropertyChanged
     {
         #region Private Fields
+        private bool _isCloseable = false;
+
         private string _caption;
         private string _message;
+
+        private MessageBoxButton _boxButton = MessageBoxButton.OK;
+        #endregion
+
+        #region Private Events
+        private void Event_HideAnimation_Completed(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void Event_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                Close();
+            }
+        }
+
+        private void Event_Closing(object sender, CancelEventArgs e)
+        {
+            var hideAnimation = this.FindResource("HideAnimation") as Storyboard;
+            if (hideAnimation == null || _isCloseable)
+            {
+                return;
+            }
+
+            e.Cancel = true;
+            _isCloseable = true;
+
+            hideAnimation.Completed += Event_HideAnimation_Completed;
+            hideAnimation.Begin(_Dialog);
+        }
         #endregion
 
         private SweetAlert()
@@ -52,6 +88,17 @@ namespace SweetAlertSharp
                 _message = value;
 
                 NotifyPropertyChanged("Message");
+            }
+        }
+
+        public MessageBoxButton MsgButton
+        {
+            get => _boxButton;
+            set
+            {
+                _boxButton = value;
+
+                NotifyPropertyChanged("MsgButton");
             }
         }
         #endregion

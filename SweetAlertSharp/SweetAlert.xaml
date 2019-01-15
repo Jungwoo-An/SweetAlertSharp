@@ -9,7 +9,9 @@
         AllowsTransparency="True"
         Background="Transparent"
         Topmost="True"
-        SizeToContent="Height">
+        SizeToContent="Height"
+        KeyUp="Event_KeyUp"
+        Closing="Event_Closing">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -21,7 +23,7 @@
     </Window.Resources>
 
     <Grid>
-        <Border x:Name="Dialog" Margin="10" MinWidth="400" MaxWidth="800" MaxHeight="800" Background="White" CornerRadius="5" Padding="20" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center">
+        <Border x:Name="_Dialog" Margin="10" MinWidth="400" MaxWidth="800" MaxHeight="800" Background="White" CornerRadius="5" Padding="20" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center">
             <Border.Triggers>
                 <EventTrigger RoutedEvent="Loaded">
                     <BeginStoryboard Storyboard="{StaticResource ShowAnimation}" />
