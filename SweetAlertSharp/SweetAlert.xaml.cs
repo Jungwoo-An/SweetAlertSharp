@@ -26,6 +26,8 @@ namespace SweetAlertSharp
 
         private string _caption;
         private string _message;
+        private string _okText = "OK";
+        private string _cancelText = "Cancel";
 
         private MessageBoxButton _boxButton = MessageBoxButton.OK;
         #endregion
@@ -35,7 +37,6 @@ namespace SweetAlertSharp
         {
             this.Close();
         }
-
 
         private void Event_KeyUp(object sender, KeyEventArgs e)
         {
@@ -61,7 +62,7 @@ namespace SweetAlertSharp
         }
         #endregion
 
-        private SweetAlert()
+        public SweetAlert()
         {
             InitializeComponent();
         }
@@ -101,15 +102,38 @@ namespace SweetAlertSharp
                 NotifyPropertyChanged("MsgButton");
             }
         }
+
+        public string OkText
+        {
+            get => _okText;
+            set
+            {
+                _okText = value;
+
+                NotifyPropertyChanged("OkText");
+            }
+        }
+
+        public string CancelText
+        {
+            get => _cancelText;
+            set
+            {
+                _cancelText = value;
+
+                NotifyPropertyChanged("CancelText");
+            }
+        }
         #endregion
 
         #region Public Methods
-        public static void Show(string caption, string content)
+        public static void Show(string caption, string content, MessageBoxButton msgButton = MessageBoxButton.OK)
         {
             var alert = new SweetAlert
             {
                 Caption = caption,
                 Message = content,
+                MsgButton = msgButton,
             };
 
             alert.ShowDialog();
