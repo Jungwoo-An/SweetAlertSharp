@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SweetAlertSharp.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace SweetAlertSharp
         private string _cancelText = "Cancel";
 
         private MessageBoxButton _boxButton = MessageBoxButton.OK;
+        private SweetAlertImage _boxImage = SweetAlertImage.NONE;
         #endregion
 
         #region Private Events
@@ -103,6 +105,17 @@ namespace SweetAlertSharp
             }
         }
 
+        public SweetAlertImage MsgImage
+        {
+            get => _boxImage;
+            set
+            {
+                _boxImage = value;
+
+                NotifyPropertyChanged("MsgImage");
+            }
+        }
+
         public string OkText
         {
             get => _okText;
@@ -127,13 +140,14 @@ namespace SweetAlertSharp
         #endregion
 
         #region Public Methods
-        public static void Show(string caption, string content, MessageBoxButton msgButton = MessageBoxButton.OK)
+        public static void Show(string caption, string content, MessageBoxButton msgButton = MessageBoxButton.OK, SweetAlertImage msgImage = SweetAlertImage.NONE)
         {
             var alert = new SweetAlert
             {
                 Caption = caption,
                 Message = content,
                 MsgButton = msgButton,
+                MsgImage = msgImage,
             };
 
             alert.ShowDialog();

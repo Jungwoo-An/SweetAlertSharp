@@ -55,6 +55,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\EnumToVisibleConverter.cs" />
+    <Compile Include="Enums\SweetAlertImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
