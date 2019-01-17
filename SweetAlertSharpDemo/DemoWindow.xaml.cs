@@ -1,4 +1,5 @@
 ﻿using SweetAlertSharp;
+using SweetAlertSharp.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,16 @@ namespace SweetAlertSharpDemo
         private void Event_Click(object sender, RoutedEventArgs e)
         {
             SweetAlert.Show("Caption", "Content");
+        }
+
+        private void Event_Information(object sender, RoutedEventArgs e)
+        {
+            SweetAlert.Show("Caption", "Content", msgImage: SweetAlertImage.INFORMATION);
+        }
+
+        private void Event_YesNo(object sender, RoutedEventArgs e)
+        {
+            SweetAlert.Show("Caption", "Content", MessageBoxButton.YesNo, SweetAlertImage.INFORMATION);
         }
     }
 }

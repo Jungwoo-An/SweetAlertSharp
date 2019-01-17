@@ -23,7 +23,7 @@ namespace SweetAlertSharp
     public partial class SweetAlert : Window, INotifyPropertyChanged
     {
         #region Private Fields
-        private bool _isCloseable = false;
+        private bool _isCloseable = true;
 
         private string _caption;
         private string _message;
@@ -32,12 +32,34 @@ namespace SweetAlertSharp
 
         private MessageBoxButton _boxButton = MessageBoxButton.OK;
         private SweetAlertImage _boxImage = SweetAlertImage.NONE;
+
+        private SweetAlertResult _result = SweetAlertResult.CANCEL;
         #endregion
 
         #region Private Events
         private void Event_HideAnimation_Completed(object sender, EventArgs e)
         {
-            this.Close();
+            if (_isCloseable)
+            {
+                return;
+            }
+
+            Close();
+        }
+
+        private void Event_Click_Button(object sender, RoutedEventArgs e)
+        {
+            if (!_isCloseable)
+            {
+                return;
+            }
+
+            if (sender == _OkButton)
+            {
+                _result = SweetAlertResult.OK;
+            }
+
+            Close();
         }
 
         private void Event_KeyUp(object sender, KeyEventArgs e)
@@ -51,13 +73,13 @@ namespace SweetAlertSharp
         private void Event_Closing(object sender, CancelEventArgs e)
         {
             var hideAnimation = this.FindResource("HideAnimation") as Storyboard;
-            if (hideAnimation == null || _isCloseable)
+            if (hideAnimation == null || !_isCloseable)
             {
                 return;
             }
 
             e.Cancel = true;
-            _isCloseable = true;
+            _isCloseable = false;
 
             hideAnimation.Completed += Event_HideAnimation_Completed;
             hideAnimation.Begin(_Dialog);
@@ -67,6 +89,8 @@ namespace SweetAlertSharp
         public SweetAlert()
         {
             InitializeComponent();
+
+            _OkButton.Focus();
         }
 
         #region Public Properties
@@ -116,6 +140,11 @@ namespace SweetAlertSharp
             }
         }
 
+        public SweetAlertResult Result
+        {
+            get => _result;
+        }
+
         public string OkText
         {
             get => _okText;
@@ -140,7 +169,7 @@ namespace SweetAlertSharp
         #endregion
 
         #region Public Methods
-        public static void Show(string caption, string content, MessageBoxButton msgButton = MessageBoxButton.OK, SweetAlertImage msgImage = SweetAlertImage.NONE)
+        public static SweetAlertResult Show(string caption, string content, MessageBoxButton msgButton = MessageBoxButton.OK, SweetAlertImage msgImage = SweetAlertImage.NONE)
         {
             var alert = new SweetAlert
             {
@@ -151,6 +180,8 @@ namespace SweetAlertSharp
             };
 
             alert.ShowDialog();
+
+            return alert.Result;
         }
         #endregion
 

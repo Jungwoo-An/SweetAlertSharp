@@ -95,13 +95,16 @@
                 <TextBlock x:Name="_Content" Text="{Binding Message, ElementName=_SweetAlert}" FontSize="13pt" Margin="0,15" HorizontalAlignment="Center" TextWrapping="Wrap" />
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="_OkButton" Style="{StaticResource BlueButton}" Content="{Binding OkText, ElementName=_SweetAlert}" />
-                    <Button x:Name="_CancelButton" Content="{Binding CancelText, ElementName=_SweetAlert}">
+                    <Button x:Name="_OkButton" Style="{StaticResource BlueButton}" Content="{Binding OkText, ElementName=_SweetAlert}" Click="Event_Click_Button" />
+                    <Button x:Name="_CancelButton" Content="{Binding CancelText, ElementName=_SweetAlert}" Click="Event_Click_Button">
                         <Button.Style>
                             <Style BasedOn="{StaticResource RedButton}" TargetType="Button">
                                 <Setter Property="Visibility" Value="Collapsed" />
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding MsgButton, ElementName=_SweetAlert}" Value="{x:Static sys:MessageBoxButton.OKCancel}">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding MsgButton, ElementName=_SweetAlert}" Value="{x:Static sys:MessageBoxButton.YesNo}">
                                         <Setter Property="Visibility" Value="Visible" />
                                     </DataTrigger>
                                 </Style.Triggers>
