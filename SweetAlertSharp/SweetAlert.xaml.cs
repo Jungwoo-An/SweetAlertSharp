@@ -32,8 +32,6 @@ namespace SweetAlertSharp
 
         private MessageBoxButton _boxButton = MessageBoxButton.OK;
         private SweetAlertImage _boxImage = SweetAlertImage.NONE;
-
-        private SweetAlertResult _result = SweetAlertResult.CANCEL;
         #endregion
 
         #region Private Events
@@ -56,7 +54,7 @@ namespace SweetAlertSharp
 
             if (sender == _OkButton)
             {
-                _result = SweetAlertResult.OK;
+                Result = SweetAlertResult.OK;
             }
 
             Close();
@@ -140,10 +138,7 @@ namespace SweetAlertSharp
             }
         }
 
-        public SweetAlertResult Result
-        {
-            get => _result;
-        }
+        public SweetAlertResult Result { get; private set; } = SweetAlertResult.CANCEL;
 
         public string OkText
         {

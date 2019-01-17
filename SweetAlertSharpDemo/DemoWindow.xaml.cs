@@ -40,5 +40,19 @@ namespace SweetAlertSharpDemo
         {
             SweetAlert.Show("Caption", "Content", MessageBoxButton.YesNo, SweetAlertImage.INFORMATION);
         }
+
+        private void Event_Custom(object sender, RoutedEventArgs e)
+        {
+            var alert = new SweetAlert();
+            alert.Caption = "Custom Alert";
+            alert.Message = "Content";
+            alert.MsgButton = MessageBoxButton.YesNo;
+            alert.OkText = "Yes.";
+            alert.CancelText = "No!";
+
+            alert.ShowDialog();
+
+            // alert.Result
+        }
     }
 }

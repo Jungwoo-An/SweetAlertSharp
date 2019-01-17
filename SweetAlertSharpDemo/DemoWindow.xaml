@@ -6,10 +6,11 @@
         Title="DemoWindow"
         Height="450"
         Width="800">
-
+    
     <StackPanel Orientation="Vertical" VerticalAlignment="Center">
         <Button VerticalAlignment="Center" HorizontalAlignment="Center" Padding="20" Click="Event_Click" Margin="0,0,0,10">START</Button>
         <Button VerticalAlignment="Center" HorizontalAlignment="Center" Padding="20" Click="Event_Information" Margin="0,0,0,10">INFORMATION</Button>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Center" Padding="20" Click="Event_YesNo">YES NO</Button>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Center" Padding="20" Click="Event_YesNo" Margin="0,0,0,10">YES NO</Button>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Center" Padding="20" Click="Event_Custom">CUSTOM BUTTON</Button>
     </StackPanel>
 </Window>
