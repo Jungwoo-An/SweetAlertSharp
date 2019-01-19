@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Jungwoo-An/SweetAlertSharp</projectUrl>
+    <iconUrl>https://github.com/Jungwoo-An/SweetAlertSharp/raw/master/static/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initialize Package</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>SweetAlertSharp MessageBox Alert Dialog</tags>
+  </metadata>
+</package>
