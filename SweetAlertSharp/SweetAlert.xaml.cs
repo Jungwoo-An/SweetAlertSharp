@@ -174,9 +174,14 @@ namespace SweetAlertSharp
                 MsgImage = msgImage,
             };
 
-            alert.ShowDialog();
+            return alert.ShowDialog();
+        }
 
-            return alert.Result;
+        public new SweetAlertResult ShowDialog()
+        {
+            base.ShowDialog();
+
+            return Result;
         }
         #endregion
 
