@@ -94,7 +94,31 @@
                 <TextBlock x:Name="_Title" Text="{Binding Title, ElementName=_SweetAlert}" FontWeight="Bold" FontSize="25pt" HorizontalAlignment="Center" TextWrapping="Wrap" />
                 <TextBlock x:Name="_Content" Text="{Binding Message, ElementName=_SweetAlert}" FontSize="13pt" Margin="0,15" HorizontalAlignment="Center" TextWrapping="Wrap" />
 
+                <ContentPresenter Content="{Binding ButtonContent, ElementName=_SweetAlert}" HorizontalAlignment="Center">
+                    <ContentPresenter.Style>
+                        <Style TargetType="ContentPresenter">
+                            <Setter Property="Visibility" Value="Visible" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ButtonContent, ElementName=_SweetAlert}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ContentPresenter.Style>
+                </ContentPresenter>
+
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ButtonContent, ElementName=_SweetAlert}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style>
+                    
                     <Button x:Name="_OkButton" Style="{StaticResource BlueButton}" Content="{Binding OkText, ElementName=_SweetAlert}" Click="Event_Click_Button" />
                     <Button x:Name="_CancelButton" Content="{Binding CancelText, ElementName=_SweetAlert}" Click="Event_Click_Button">
                         <Button.Style>

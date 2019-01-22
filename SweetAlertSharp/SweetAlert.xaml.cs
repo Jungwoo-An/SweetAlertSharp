@@ -23,6 +23,8 @@ namespace SweetAlertSharp
     public partial class SweetAlert : Window, INotifyPropertyChanged
     {
         #region Private Fields
+        private object _buttonContent = null;
+
         private bool _isCloseable = true;
 
         private string _caption;
@@ -159,6 +161,17 @@ namespace SweetAlertSharp
                 _cancelText = value;
 
                 NotifyPropertyChanged("CancelText");
+            }
+        }
+
+        public object ButtonContent
+        {
+            get => _buttonContent;
+            set
+            {
+                _buttonContent = value;
+
+                NotifyPropertyChanged("ButtonContent");
             }
         }
         #endregion
