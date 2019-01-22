@@ -50,9 +50,7 @@ namespace SweetAlertSharpDemo
             alert.OkText = "Yes.";
             alert.CancelText = "No!";
 
-            alert.ShowDialog();
-
-            // alert.Result
+            var reuslt = alert.ShowDialog();
         }
     }
 }

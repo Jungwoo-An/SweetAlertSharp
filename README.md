@@ -43,7 +43,16 @@ alert.MsgButton = MessageBoxButton.YesNo;
 alert.OkText = "Yes.";
 alert.CancelText = "No!";
 
-alert.ShowDialog();
+SweetAlertResult result = alert.ShowDialog();
+```
 
-// alert.Result
+**Custom Button Layout**
+
+```cs
+var alert = new SweetAlert();
+alert.Caption = "Custom Layout";
+alert.Message = "Content";
+alert.ButtonContent = new StackPanel();
+
+SweetAlertResult result = alert.ShowDialog();
 ```
