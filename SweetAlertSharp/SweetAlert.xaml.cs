@@ -23,6 +23,8 @@ namespace SweetAlertSharp
     public partial class SweetAlert : Window, INotifyPropertyChanged
     {
         #region Private Fields
+        private List<CancelEventHandler> _preCloseEvents = new List<CancelEventHandler>();
+
         private object _buttonContent = null;
 
         private bool _isCloseable = true;
@@ -34,6 +36,24 @@ namespace SweetAlertSharp
 
         private MessageBoxButton _boxButton = MessageBoxButton.OK;
         private SweetAlertImage _boxImage = SweetAlertImage.NONE;
+        #endregion
+
+        #region Private Methods
+        private bool RaiseCloseEvent()
+        {
+            var args = new CancelEventArgs();
+            foreach (var preCloseEvent in _preCloseEvents)
+            {
+                preCloseEvent(this, args);
+
+                if (args.Cancel)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
         #endregion
 
         #region Private Events
@@ -79,6 +99,13 @@ namespace SweetAlertSharp
             }
 
             e.Cancel = true;
+
+            if (!RaiseCloseEvent())
+            {
+                _isCloseable = true;
+                return;
+            }
+
             _isCloseable = false;
 
             hideAnimation.Completed += Event_HideAnimation_Completed;
@@ -173,6 +200,12 @@ namespace SweetAlertSharp
 
                 NotifyPropertyChanged("ButtonContent");
             }
+        }
+
+        public event CancelEventHandler PreClose
+        {
+            add => _preCloseEvents.Add(value);
+            remove => _preCloseEvents.Remove(value);
         }
         #endregion
 
