@@ -2,6 +2,7 @@
 using SweetAlertSharp.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,33 @@ namespace SweetAlertSharpDemo
             alert.MsgButton = MessageBoxButton.YesNo;
             alert.OkText = "Yes.";
             alert.CancelText = "No!";
+
+            var reuslt = alert.ShowDialog();
+        }
+
+        private void Event_Delay(object sender, RoutedEventArgs e)
+        {
+            var canClose = false;
+
+            var alert = new SweetAlert();
+            alert.Caption = "Delay";
+            alert.Message = "Wait!";
+            alert.ButtonContent = "Loading ...";
+            alert.PreClose += (object window, CancelEventArgs cancelEvent) =>
+            {
+                cancelEvent.Cancel = !canClose;
+            };
+
+            Task.Run(async () =>
+            {
+                await Task.Delay(3000);
+                await Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    canClose = true;
+
+                    alert.ButtonContent = "Ok!";
+                }));
+            });
 
             var reuslt = alert.ShowDialog();
         }

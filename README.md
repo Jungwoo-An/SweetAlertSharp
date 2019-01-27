@@ -56,3 +56,30 @@ alert.ButtonContent = new StackPanel();
 
 SweetAlertResult result = alert.ShowDialog();
 ```
+
+**Delay (ex: loading)**
+
+```cs
+var canClose = false;
+var alert = new SweetAlert();
+alert.Caption = "Delay";
+alert.Message = "Wait!";
+alert.ButtonContent = "Loading ...";
+alert.PreClose += (object window, CancelEventArgs cancelEvent) =>
+{
+    cancelEvent.Cancel = !canClose;
+};
+
+Task.Run(async () =>
+{
+    await Task.Delay(3000);
+    await Dispatcher.BeginInvoke(new Action(() =>
+    {
+        canClose = true;
+
+        alert.ButtonContent = "Ok!";
+    }));
+});
+
+var reuslt = alert.ShowDialog();
+```
