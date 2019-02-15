@@ -24,7 +24,7 @@ const result = SweetAlert.Show("Caption", "Content");
 **Yes No**
 
 ```cs
-const result = SweetAlert.Show("Caption", "Content", MessageBoxButton.YesNo);
+const result = SweetAlert.Show("Caption", "Content", SweetAlertButton.YesNo);
 ```
 
 **With Icon**
@@ -39,7 +39,7 @@ const result = SweetAlert.Show("Caption", "Content", msgImage: SweetAlertImage.I
 var alert = new SweetAlert();
 alert.Caption = "Custom Alert";
 alert.Message = "Content";
-alert.MsgButton = MessageBoxButton.YesNo;
+alert.MsgButton = SweetAlertButton.YesNo;
 alert.OkText = "Yes.";
 alert.CancelText = "No!";
 
