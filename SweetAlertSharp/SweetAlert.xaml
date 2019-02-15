@@ -1,7 +1,6 @@
 ﻿<Window x:Class="SweetAlertSharp.SweetAlert"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:sys="clr-namespace:System.Windows;assembly=PresentationFramework"
         xmlns:enums="clr-namespace:SweetAlertSharp.Enums"
         x:Name="_SweetAlert"
         Title="SweetAlert"
@@ -125,10 +124,10 @@
                             <Style BasedOn="{StaticResource RedButton}" TargetType="Button">
                                 <Setter Property="Visibility" Value="Collapsed" />
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding MsgButton, ElementName=_SweetAlert}" Value="{x:Static sys:MessageBoxButton.OKCancel}">
+                                    <DataTrigger Binding="{Binding MsgButton, ElementName=_SweetAlert}" Value="{x:Static enums:SweetAlertButton.OKCancel}">
                                         <Setter Property="Visibility" Value="Visible" />
                                     </DataTrigger>
-                                    <DataTrigger Binding="{Binding MsgButton, ElementName=_SweetAlert}" Value="{x:Static sys:MessageBoxButton.YesNo}">
+                                    <DataTrigger Binding="{Binding MsgButton, ElementName=_SweetAlert}" Value="{x:Static enums:SweetAlertButton.YesNo}">
                                         <Setter Property="Visibility" Value="Visible" />
                                     </DataTrigger>
                                 </Style.Triggers>

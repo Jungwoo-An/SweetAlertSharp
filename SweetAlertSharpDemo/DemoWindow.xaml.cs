@@ -39,7 +39,7 @@ namespace SweetAlertSharpDemo
 
         private void Event_YesNo(object sender, RoutedEventArgs e)
         {
-            SweetAlert.Show("Caption", "Content", MessageBoxButton.YesNo, SweetAlertImage.INFORMATION);
+            SweetAlert.Show("Caption", "Content", SweetAlertButton.YesNo, SweetAlertImage.INFORMATION);
         }
 
         private void Event_Custom(object sender, RoutedEventArgs e)
@@ -47,7 +47,7 @@ namespace SweetAlertSharpDemo
             var alert = new SweetAlert();
             alert.Caption = "Custom Alert";
             alert.Message = "Content";
-            alert.MsgButton = MessageBoxButton.YesNo;
+            alert.MsgButton = SweetAlertButton.YesNo;
             alert.OkText = "Yes.";
             alert.CancelText = "No!";
 

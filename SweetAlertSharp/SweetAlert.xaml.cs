@@ -34,7 +34,7 @@ namespace SweetAlertSharp
         private string _okText = "OK";
         private string _cancelText = "Cancel";
 
-        private MessageBoxButton _boxButton = MessageBoxButton.OK;
+        private SweetAlertButton _boxButton = SweetAlertButton.OK;
         private SweetAlertImage _boxImage = SweetAlertImage.NONE;
         #endregion
 
@@ -145,7 +145,7 @@ namespace SweetAlertSharp
             }
         }
 
-        public MessageBoxButton MsgButton
+        public SweetAlertButton MsgButton
         {
             get => _boxButton;
             set
@@ -210,7 +210,7 @@ namespace SweetAlertSharp
         #endregion
 
         #region Public Methods
-        public static SweetAlertResult Show(string caption, string content, MessageBoxButton msgButton = MessageBoxButton.OK, SweetAlertImage msgImage = SweetAlertImage.NONE)
+        public static SweetAlertResult Show(string caption, string content, SweetAlertButton msgButton = SweetAlertButton.OK, SweetAlertImage msgImage = SweetAlertImage.NONE)
         {
             var alert = new SweetAlert
             {
