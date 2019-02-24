@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
@@ -11,7 +11,7 @@
     <iconUrl>https://github.com/Jungwoo-An/SweetAlertSharp/raw/master/static/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Add PreClose event</releaseNotes>
+    <releaseNotes>Add SweetAlertButton enum</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>SweetAlertSharp MessageBox Alert Dialog</tags>
   </metadata>
