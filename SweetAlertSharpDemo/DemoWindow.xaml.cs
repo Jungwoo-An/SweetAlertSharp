@@ -51,7 +51,7 @@ namespace SweetAlertSharpDemo
             alert.OkText = "Yes.";
             alert.CancelText = "No!";
 
-            var reuslt = alert.ShowDialog();
+            var result = alert.ShowDialog();
         }
 
         private void Event_Delay(object sender, RoutedEventArgs e)

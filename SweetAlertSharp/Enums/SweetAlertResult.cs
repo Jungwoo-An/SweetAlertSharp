@@ -10,5 +10,7 @@ namespace SweetAlertSharp.Enums
     {
         OK,
         CANCEL,
+        YES = OK,
+        NO = CANCEL,
     }
 }
